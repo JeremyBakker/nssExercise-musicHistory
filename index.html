@@ -1,0 +1,110 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Music History</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<div id="listContainer">
+		<header>
+			<nav>
+				<ul>
+					<li><a href="#" id="hideAdd">List Music</a></li>
+					<li><a href="#" id="hideList">Add Music</a></li>
+					<li><a href="#">Profile</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div id="listContent">
+			<div id="sidebar">
+			    <form>
+				    <label for="songLength">Song length:</label><br>
+				    <input type="range" name="songLength" min="0" max="100" step="1">
+				    <label>Artist:</label><br>
+				    <select class="selectBox">
+					    <option selected disabled>Options</option>
+					    <option value="eminem">Eminem</option>
+					    <option value="aliceInChains">Alice in Chains</option>
+					    <option value="johnColtrane">John Coltrane</option>
+					    <option value="milesDavis">Miles Davis</option>
+					    <option value="pantera">Pantera</option>
+					    <option value="tupac">Tupac</option>
+					    <option value="theWoodBrothers">The Wood Brothers</option>
+					</select><br>
+					<label>Albums:</label><br>
+					<select class="selectBox">
+						<option selected disabled>Options</option>
+						<option value="slimShady">The Slim Shady LP</option>
+						<option value="marshallMathers">The Marshall Mathers LP</option>
+						<option value="eminemShow">The Eminem Show</option>
+						<option value="facelift">Facelift</option>
+						<option value="dirt">Dirt</option>
+						<option value="aliceInChains">Alice in Chains</option>
+						<option value="blueTrain">Blue Train</option>
+						<option value="giantSteps">Giant Steps</option>
+						<option value="favoriteThings">My Favorite Things</option>
+						<option value="loveSupreme">A Love Supreme
+						<option value="workin">Workin'</option>
+						<option value="steamin">Steamin'</option>
+						<option value="kindOfBlue">Kind of Blue</option>
+						<option value="inASilentWay">In a Silent Way</option>
+						<option value="bitchesBrew">Bitches Brew</option>
+						<option value="cowboysFromHell">Cowboys from Hell</option>
+						<option value="vulgarDisplayOfPower">Vulgar Display of Power</option>
+						<option value="2PacalypseNow">2Pacalypse Now</option>
+						<option value="meAgainstTheWorld">Me Against the World</option>
+						<option value="allEyezOnMe">All Eyez on Me</option>
+						<option value="theMuse">The Muse</option>
+						<option value="paradise">Paradise</option>
+					</select>
+					<label for="genre">Genre:</label><br>
+				    <div id="checkBoxes">
+					    <div id="leftColumnCheckBox">
+						    <ul>
+							    <li><input type="checkbox" name="genre" value="rock">Rock</li>
+							    <li><input type="checkbox" name="genre" value="pop">Pop</li>
+							    <li><input type="checkbox" name="genre" value="blues">Blues</li>
+						    </ul>
+					    </div>
+					    <div id="rightColumnCheckBox">
+					    	<ul>
+							    <li><input type="checkbox" name="genre" value="classical">Classical</li>
+							    <li><input type="checkbox" name="genre" value="Jjazz">Jazz</li>
+							    <li><input type="checkbox" name="genre" value="hipHop">Hip Hop</li>
+						    </ul>
+					    </div>
+					</div>
+					<input id="filterButton" stype="submit" value="Filter">
+				</form>
+			</div>
+			<div id="main">
+				
+			</div>
+		</div>	
+	</div>
+	<div id="addMusicContainer" class="hidden">
+		<div class="group" id="addMusic">
+			<div id="addMusicCol1">
+				<ul>
+					<li>Song name: </li>
+					<li>Artist: </li>
+					<li>Album: </li>
+				</ul>
+			</div>
+			<div id="addMusicCol2">
+				<ul>
+					<li><input type="text" name="songName" placeholder=" Song Name" id="addSongText"></li>
+					<li><input type="text" name="artist" placeholder=" Artist" id="addArtistText"></li>
+					<li><input type="text" name="album" placeholder=" Album" id="addAlbumText"></li>
+				</ul>
+			</div>
+		</div>
+		<div>
+			<button id="addButton">Add</button>
+		</div>
+	</div>
+	<script type="text/javascript" src="javascripts/songs.js"></script>
+</body>
+</html>
