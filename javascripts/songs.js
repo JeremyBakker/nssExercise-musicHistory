@@ -35,13 +35,17 @@ for (var i = 0; i < songs.length; i++){
 	var song = songs[i].slice(0,songs[i].indexOf("by")-2);
 	var artist = songs[i].slice(songs[i].indexOf("by")+3, songs[i].indexOf(" on "));
 	var album = songs[i].slice(songs[i].indexOf("album")+6, songs[i].length+1);
-	document.getElementById("main").innerHTML += `<p>${song}</p>
-				<ul>
-					<li>${artist}</li>
-					<li>${album}</li>
-					<li>Genre</li>
-				</ul>`;
+	document.getElementById("main").innerHTML += `<div class="musicEntry">
+		<p>${song}</p>
+		<ul>
+			<li>${artist}</li>
+			<li>${album}</li>
+			<li>Genre</li>
+		</ul>
+		<button class="delete">Delete</button>
+	</div>`;
 }
+identifyButtons();
 
 
 // allow users to input data and add to the main section of the list view
@@ -57,16 +61,19 @@ function addMusic(event) {
 		alert("Please enter values in each field before submitting.")
 	}
 	songs.push(song + artist + album);
-	document.getElementById("main").innerHTML += `<p>${song}</p>
-				<ul>
-					<li>${artist}</li>
-					<li>${album}</li>
-					<li>Genre</li>
-				</ul>`;
+	document.getElementById("main").innerHTML += `<div class="musicEntry">	
+		<p>${song}</p>
+			<ul>
+				<li>${artist}</li>
+				<li>${album}</li>
+				<li>Genre</li>
+			</ul>
+			<button class="delete">Delete</button>
+	</div>`;
 	document.getElementById("addSongText").value = "";
 	document.getElementById("addArtistText").value = "";
 	document.getElementById("addAlbumText").value = "";
-	return false;
+	identifyButtons();
 }
 
 
@@ -82,3 +89,21 @@ function hideAddView(event) {
 	document.getElementById("addMusicContainer").classList.remove("hidden");
 	document.getElementById("listContent").classList.add("hidden");
 }
+
+// traverses through the button array each time a button is added in order to add the 
+	// appropriate event listener
+
+function identifyButtons(){
+	for (var i = 0; i < songs.length; i++) {
+		document.getElementsByClassName("delete")[i].addEventListener("click", erase);
+	}
+}
+
+
+// allow users to delete a musicEntry row from the DOM
+
+function erase(event) {
+	console.log("Click!")
+	this.parentNode.parentNode.removeChild(this.parentNode);
+}
+

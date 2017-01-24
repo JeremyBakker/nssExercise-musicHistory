@@ -263,3 +263,21 @@ input[type=text] {
 	font-size: 1em;
 	margin-left: 40%;
 }
+
+.musicEntry {
+	overflow: hidden;
+	height: 141px;
+	position: relative;
+}
+
+.delete {
+	border: solid 2px black;
+	background-color: lightgrey;
+	border-radius: 5px;
+	width: 7em;
+	text-align: center;
+	font-size: 1em;
+	position: absolute;
+	top: 30%;
+	right: 5px;
+}
